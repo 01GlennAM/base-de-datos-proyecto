@@ -27,14 +27,14 @@ public class Usuario {
         this.fechaActualizacion = fechaActualizacion;
         this.activo = activo;
 
-
         this.pago = new ArrayList<>();
         this.inscripcion = new ArrayList<>();
     }
 
-    
-     /* Permite ver los pagos, pero no permite hacer .add() ni .clear() en las listas */ 
-      public List<Pago> getPago() {
+    /*
+     * Permite ver los pagos, pero no permite hacer .add() ni .clear() en las listas
+     */
+    public List<Pago> getPago() {
         return Collections.unmodifiableList(pago);
     }
 
@@ -74,7 +74,8 @@ public class Usuario {
         return email;
     }
 
-    /* confirmamos que el email debe llevar @ */ public void setEmail(String email) {
+    /* confirmamos que el email debe llevar @ */
+    public void setEmail(String email) {
         if (!email.contains("@")) {
             throw new IllegalArgumentException("Email inválido");
         }
@@ -111,5 +112,12 @@ public class Usuario {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{id=" + idUsuario +
+                ", nombre='" + nombre +
+                "', email='" + email + "'}";
     }
 }

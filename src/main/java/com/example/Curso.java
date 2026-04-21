@@ -5,76 +5,135 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Curso {
-    private int idCurso;
-    private String titulo;
-    private String descripcion;
-    private String url;
-    private double valor;
-    private boolean estaPublicado;
-    private Usuario instructor;
-    private Date fechaCreacion;
-    private Date fechaActualizacion;
-    
-    private Categoria categoria;
-    private List<Modulo> modulos;
+     private int idCurso;
+     private String titulo;
+     private String descripcion;
+     private String url;
+     private double valor;
+     private boolean estaPublicado;
+     private Usuario instructor;
+     private Date fechaCreacion;
+     private Date fechaActualizacion;
+     private Categoria categoria;
 
-    public Curso(int idCurso, String titulo, String descripcion, String url, double valor,
-                 boolean estaPublicado, Usuario instructor,
-                 Date fechaCreacion, Date fechaActualizacion, Categoria categoria) {
+     private List<Modulo> modulos;
 
-        this.idCurso = idCurso;
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.url = url;
-        this.valor = valor;
-        this.estaPublicado = estaPublicado;
-        this.instructor = instructor;
-        this.fechaCreacion = fechaCreacion;
-        this.fechaActualizacion = fechaActualizacion;
-        this.categoria = categoria;
+     public Curso(int idCurso, String titulo, String descripcion, String url, double valor,
+               boolean estaPublicado, Usuario instructor, Date fechaCreacion, Date fechaActualizacion,
+               Categoria categoria) {
 
-        this.modulos = new ArrayList<>();
-    }
+          this.idCurso = idCurso;
+          this.titulo = titulo;
+          this.descripcion = descripcion;
+          this.url = url;
+          this.valor = valor;
+          this.estaPublicado = estaPublicado;
+          this.instructor = instructor;
+          this.fechaCreacion = fechaCreacion;
+          this.fechaActualizacion = fechaActualizacion;
+          this.categoria = categoria;
 
-    public void agregarModulo(Modulo modulo) {
-        if (modulo != null) {
-            this.modulos.add(modulo);
-        }
-    }
+          this.modulos = new ArrayList<>();
+     }
 
-    public List<Modulo> getModulos() {
-        return modulos;
-    }
+     public void agregarModulo(Modulo modulo) {
+          if (modulo != null) {
+               this.modulos.add(modulo);
+          }
+     }
 
-    // Getters y setters
+     public List<Modulo> getModulos() {
+          return modulos;
+     }
 
-    public int getIdCurso() { return idCurso; }
-    public void setIdCurso(int idCurso) { this.idCurso = idCurso; }
+     // Getters y setters
 
-    public String getTitulo() { return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
+     public int getIdCurso() {
+          return idCurso;
+     }
 
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+     public void setIdCurso(int idCurso) {
+          this.idCurso = idCurso;
+     }
 
-    public String getUrl() { return url; }
-    public void setUrl(String url) { this.url = url; }
+     public String getTitulo() {
+          return titulo;
+     }
 
-    public double getValor() { return valor; }
-    public void setValor(double valor) { this.valor = valor; }
+     public void setTitulo(String titulo) {
+          this.titulo = titulo;
 
-    public boolean isEstaPublicado() { return estaPublicado; }
-    public void setEstaPublicado(boolean estaPublicado) { this.estaPublicado = estaPublicado; }
+     }
 
-    public Usuario getInstructor() { return instructor; }
-    public void setInstructor(Usuario instructor) { this.instructor = instructor; }
+     public String getDescripcion() {
+          return descripcion;
+     }
 
-    public Date getFechaCreacion() { return fechaCreacion; }
-    public void setFechaCreacion(Date fechaCreacion) { this.fechaCreacion = fechaCreacion; }
+     public void setDescripcion(String descripcion) {
+          this.descripcion = descripcion;
+     }
 
-    public Date getFechaActualizacion() { return fechaActualizacion; }
-    public void setFechaActualizacion(Date fechaActualizacion) { this.fechaActualizacion = fechaActualizacion; }
+     public String getUrl() {
+          return url;
+     }
 
-    public Categoria getCategoria() { return categoria; }
-    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+     public void setUrl(String url) {
+          this.url = url;
+     }
+
+     public double getValor() {
+          return valor;
+     }
+
+     public void setValor(double valor) {
+          this.valor = valor;
+     }
+
+     public boolean isEstaPublicado() {
+          return estaPublicado;
+     }
+
+     public void setEstaPublicado(boolean estaPublicado) {
+          this.estaPublicado = estaPublicado;
+     }
+
+     public Usuario getInstructor() {
+          return instructor;
+     }
+
+     public void setInstructor(Usuario instructor) {
+          this.instructor = instructor;
+     }
+
+     public Date getFechaCreacion() {
+          return fechaCreacion;
+     }
+
+     public void setFechaCreacion(Date fechaCreacion) {
+          this.fechaCreacion = fechaCreacion;
+     }
+
+     public Date getFechaActualizacion() {
+          return fechaActualizacion;
+     }
+
+     public void setFechaActualizacion(Date fechaActualizacion) {
+          this.fechaActualizacion = fechaActualizacion;
+     }
+
+     public Categoria getCategoria() {
+          return categoria;
+     }
+
+     public void setCategoria(Categoria categoria) {
+          this.categoria = categoria;
+     }
+
+     @Override
+     public String toString() {
+          return "Curso{id=" + idCurso +
+                    ", titulo='" + titulo +
+                    "', instructor=" + (instructor != null ? instructor.getNombre() : "null") +
+                    "}";
+     }
 }
