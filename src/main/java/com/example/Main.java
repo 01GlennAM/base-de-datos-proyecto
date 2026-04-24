@@ -5,8 +5,9 @@ public class Main {
     public static void main(String[] args) {
           // 📌 1. Crear Categoria
         Categoria categoria = new Categoria(1, "Programación", "Cursos de desarrollo");
+        System.out.println("Nombre de la categoria: " + categoria.getNombre()); 
+        System.out.println("Descripción: " + categoria.getDescripcion()); 
         
-
         // 📌 2. Crear Usuario (Instructor)
         Usuario instructor = new Usuario(
                 1,
@@ -17,7 +18,9 @@ public class Main {
                 new Date(System.currentTimeMillis()),
                 true
         );
-        System.out.println(instructor); 
+
+        System.out.println("Nombre instructor: " + instructor.getNombre()); 
+
 
          // 📌 3. Crear Curso
         Curso curso = new Curso(
@@ -33,8 +36,27 @@ public class Main {
                 categoria
         );
 
+        System.out.println("Titulo del Curso: " + curso.getTitulo());
+        System.out.println("Descripción del Curso: " + curso.getDescripcion()); 
+           for (Modulo m : curso.getModulos()) {
+            System.out.println(" Módulo: " + m.getTitulo());
+
+            for (Leccion lec : m.getLecciones()) {
+                System.out.println("   Lección: " + lec.getTitulo());
+            }
+        } 
+
+
         // 📌 4. Crear Modulo
         Modulo modulo1 = new Modulo(1, "Introducción", "Bases", 1, curso);
+
+        for (Modulo m : curso.getModulos()) {
+                System.out.println(" Módulo: " + m.getTitulo());
+
+        for (Leccion lec : m.getLecciones()) {
+                System.out.println("   Lección: " + lec.getTitulo());
+            }
+        } 
 
         // 📌 5. Crear Lecciones
         Leccion l1 = new Leccion(1, "¿Qué es Java?", "Intro", "url1", 10, 1, modulo1);
@@ -85,22 +107,8 @@ public class Main {
 
         // 📌 10. Mostrar resultados
 
-        System.out.println("Curso: " + curso.getTitulo());
-        System.out.println("Instructor: " + curso.getInstructor().getNombre());
-
-        for (Modulo m : curso.getModulos()) {
-            System.out.println(" Módulo: " + m.getTitulo());
-
-            for (Leccion lec : m.getLecciones()) {
-                System.out.println("   Lección: " + lec.getTitulo());
-            }
-        } 
-
-        System.out.println("Categoria del curso: " + curso.getCategoria());
-       
         System.out.println("\nEstudiante: " + estudiante.getNombre());
         System.out.println("Estado inscripción: " + inscripcion.getEstado());
-
         System.out.println("\nProgreso:");
         System.out.println("Lección 1 completada: " + progreso1.isCompletado());
         System.out.println("Lección 2 completada: " + progreso2.isCompletado());

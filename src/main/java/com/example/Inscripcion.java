@@ -26,6 +26,9 @@ public class Inscripcion { /* comentarios */
         AVANZADO
     }
 
+    
+
+
     // CONSTRUCTOR
 
     public Inscripcion(int idInscripcion, Usuario usuario, Curso curso, Date fechaInscripcion, EstadoInscripcion estado,
